@@ -1,0 +1,92 @@
+<div class="container-form login">
+    <div class="cflogin">
+      <div class="information">
+        <div class="info-childs">
+          <h2>¡¡Bienvenido!!</h2>
+          <img src="images/saludo.png" alt="Saludo" />
+          <p>Registra los datos que se solicitan para crear una cuenta</p>
+        </div>
+      </div>
+    
+      <div class="form-information">
+        <div class="form-information-childs">
+          <h2>Registro</h2>
+          <div class="form">
+            <form *ngIf="!isLoading" [formGroup]="registroForm"
+              (ngSubmit)="onSubmit()">
+              <br />
+    
+              <label for="filter" class="switch" aria-label="Toggle User Type">
+                <input
+                  type="checkbox"
+                  id="filter"
+                  (change)="onToggleUserType($event)" />
+                <span>Cliente</span>
+                <span>Veterinario</span>
+              </label>
+    
+              <div class="row">
+                <div class="col">
+                  <label>
+                    <input type="text" id="nombre"
+                      formControlName="nombre" placeholder="Nombre">
+                  </label>
+                </div>
+                <div class="col">
+                  <label>
+                    <input type="text" id="apellido"
+                      formControlName="apellidos" placeholder="Apellido">
+                  </label>
+                </div>
+              </div>
+    
+              <div>
+                <label>
+                  <img src="images/usuario.png" alt="Usuario" class="input-icon" />
+                  <input type="text" id="email"
+                    formControlName="email" placeholder="Email">
+                </label>
+              </div>
+              <div>
+                <label class="password-container">
+                  <img src="images/contraseña.png" alt="Contraseña"
+                    class="input-icon" />
+                  <input
+                    type="password" id="password"
+                    formControlName="password"
+                    placeholder="Contraseña">
+                </label>
+              </div>
+    
+              <div *ngIf="registroForm.get('tipo')?.value === 'veterinario'">
+                <label>
+                  <input
+                    type="text"
+                    id="cedula_profesional"
+                    formControlName="cedula_profesional"
+                    placeholder="Cédula Profesional">
+                </label>
+              </div>
+    
+              <div id="botonesLog">
+                <input type="submit" value="Registrar">
+              </div>
+            </form>
+            <!-- Animación de carga -->
+            <div *ngIf="isLoading" class="text-center">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <p class="mt-3">Procesando tu registro, espera un momento...</p>
+            </div>
+    
+            <!-- Alerta -->
+            <div *ngIf="alertaMensaje" class="alert mt-3"
+              [ngClass]="'alert-' + alertaTipo" role="alert">
+              {{ alertaMensaje }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

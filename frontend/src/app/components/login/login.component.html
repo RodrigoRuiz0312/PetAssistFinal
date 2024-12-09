@@ -1,0 +1,59 @@
+<div class="page-container" [ngClass]="{ blur: isLoading || mensajeError || successMessage }">
+    <div class="container-form login">
+      <div class="cflogin">
+        <div class="information">
+          <div class="info-childs">
+            <h2>¡¡Bienvenido!!</h2>
+            <img src="images/saludo.png">
+            <p>Ingresa tu correo y contraseña para acceder</p>
+          </div>
+        </div>
+  
+        <div class="form-information">
+          <div class="form-information-childs">
+            <h2>Iniciar sesión</h2>
+            <div class="form">
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <br>
+                <div>
+                  <label for="usuario">
+                    <img src="images/usuario.png" alt="Usuario" class="input-icon">
+                    <input type="text" placeholder="Email" formControlName="email" required>
+                  </label>
+                </div>
+                <div>
+                  <label class="password-container">
+                    <img src="images/contraseña.png" alt="Contraseña" class="input-icon">
+                    <input class="input" type="password" placeholder="Contraseña" formControlName="password" required>
+                  </label>
+                </div>
+                <div id="botonesLog">
+                  <input type="submit" value="Iniciar Sesión">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Animación de carga -->
+  <div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Verificando...</p>
+  </div>
+  
+  <!-- Mensaje de éxito -->
+  <div class="loading-overlay" *ngIf="successMessage">
+    <div class="spinner"></div>
+    <p>{{ successMessage }}</p>
+  </div>
+  
+  <!-- Alerta -->
+  <div class="alert-overlay" *ngIf="mensajeError">
+    <div class="alert-box">
+      <p>{{ mensajeError }}</p>
+      <button (click)="cerrarAlerta()">Aceptar</button>
+    </div>
+  </div>  

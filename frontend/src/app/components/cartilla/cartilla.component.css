@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/* Contenedor principal */
+.cartilla-container {
+  width: auto;
+  border-radius: 10px;
+  font-family: "Oxanium", sans-serif;
+}
+
+.cartilla-container h2{
+  font-size: 25px;
+}
+
+.listaMascotas{
+  position: relative;
+  top: 130px;
+  left: 50px;
+  max-width: 1200px;
+  color: #232323;
+}
+
+.listaMascotas table{
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Bordes de la tabla y las celdas */
+.listaMascotas table, .listaMascotas td {
+  border: 1px solid #ccc; /* Bordes de la tabla y celdas */
+}
+
+.listaMascotas td{
+  text-align: center;
+  font-weight: 500;
+}
+
+.listaMascotas th{
+  background-color: #28b5d8;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Secciones */
+.cartilla-section {
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: "Oxanium", sans-serif;
+}
+
+.cartilla-noMascotas{
+  position: absolute;
+  width: 1250px;
+  height: 500px;
+  top: 100px;
+  left: 30px;
+  color: white;
+  background: linear-gradient(to right bottom, rgb(18, 157, 221), rgba(43, 152, 188, 0.62));
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: "Oxanium", sans-serif;
+  
+  /* Flexbox para centrar el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centrado vertical */
+  align-items: center;      /* Centrado horizontal */
+  text-align: center;       /* Asegurarse de que el texto esté centrado */
+}
+
+/* Datos Generales */
+.datos-generales {
+  padding-top: 6px;
+  height: 260px;
+  width: 370px;
+  top: 100px; /* Coordenada Y */
+  left: 50px; /* Coordenada X */
+  border-radius: 10px;
+}
+
+/* Historial Médico */
+.historial-medico {
+  padding-top: 6px;
+  width: 830px;
+  height: 260px;
+  top: 100px;
+  left: 450px;
+}
+
+/* Próximas Citas */
+.proximas-citas {
+  padding-top: 5px;
+  width: 1230px;
+  height: 230px;
+  top: 380px;
+  left: 50px; 
+}
+
+.button{
+  background: linear-gradient(140.14deg, #0e8cec 15.05%, #1fcdd6 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, #4a99d6 8.65%, #329bec 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  padding: 10px 40px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.proximas-citas button{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  padding: 10px 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.button:hover {
+  box-shadow: none;
+  opacity: 80%;
+}
+
+/* Contenedor con scroll para las próximas citas */
+.cartilla-tabla-container {
+  max-height: 115px;  /* Ajusta según lo que necesites */
+  overflow-y: auto;   /* Activa el scroll vertical */
+  margin-top: 10px;    /* Espacio superior opcional */
+  border: 1px solid #ccc;  /* Borde opcional alrededor del contenedor */
+  padding: 0;         /* Elimina el espaciado interno para asegurar el comportamiento del scroll */
+}
+
+/* Estilos para la tabla dentro del contenedor */
+.cartilla-tabla {
+  width: 100%;
+  table-layout: fixed; /* Esto evita que la tabla se expanda más allá del contenedor */
+  border-collapse: collapse;
+  margin: 0;  /* Elimina márgenes innecesarios */
+}
+
+.cartilla-tabla th, .cartilla-tabla td {
+  padding: 8px;
+  text-align: center;
+}
+
+.cartilla-tabla th {
+  background-color: #f4f4f4;
+}
+
+.cartilla-tabla td {
+  border: 1px solid #ccc;
+}

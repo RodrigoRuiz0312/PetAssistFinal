@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/* Contenedor principal */
+.cartilla-container {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.listaMascotas{
+  position: relative;
+  top: 130px;
+  left: 50px;
+  max-width: 1200px;
+}
+
+/* Secciones */
+.cartilla-section {
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: "Oxanium", sans-serif;
+}
+
+/* Datos Generales */
+.datos-generales {
+  height: 500px;
+  width: 380px;
+  top: 100px; /* Coordenada Y */
+  left: 50px; /* Coordenada X */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Registrar citas */
+.registrar-cita {
+  width: 830px;
+  height: 500px;
+  top: 100px;
+  left: 450px;
+}
+
+/* Estilo adicional para las tablas */
+.cartilla-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cartilla-tabla th, .cartilla-tabla td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.cartilla-tabla th {
+  background-color: #f4f4f4;
+}
+
+.button{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(140.14deg, #0e8cec 15.05%, #1fcdd6 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, #4a99d6 8.65%, #329bec 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  padding: 10px 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.button_2{
+  position: absolute;
+  bottom: 10px;
+  right: 130px;
+  background: linear-gradient(140.14deg, #0e8cec 15.05%, #1fcdd6 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, #4a99d6 8.65%, #329bec 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  padding: 10px 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;  
+}
+
+.button_3{
+  position: absolute;
+  bottom: 10px;
+  right: 300px;
+  background: linear-gradient(140.14deg, #0e8cec 15.05%, #1fcdd6 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, #4a99d6 8.65%, #329bec 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  padding: 10px 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;  
+}
+
+.button_3:hover{
+  box-shadow: none;
+  opacity: 80%;
+}
+
+.button_2:hover{
+  box-shadow: none;
+  opacity: 80%;
+}
+
+
+.button:hover {
+  box-shadow: none;
+  opacity: 80%;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 7px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-family: "Oxanium", sans-serif;
+}
+
+.datos-generales img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.registrar-cita p{
+  font-size: 1.1rem;
+}

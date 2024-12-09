@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxanium", sans-serif; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: #46698d;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 1em 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  background: linear-gradient(to right bottom, rgb(18, 157, 221), rgba(43, 152, 188, 0.62));
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.rotacion {
+  transition: transform 0.5s ease;
+}
+
+.rotacion:hover {
+  transform: rotate(360deg);
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 20px;
+  gap: 1.5em;
+  font-weight: bold;
+}
+
+.logo {
+  width: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+  margin-right: 50px;
+  font-size: 20px;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+button {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+button:hover{
+  color: #00bfff;
+}
+
+.nav-links a:hover {
+  color: #00bfff;
+}
+
+.dropdown-menu a{
+  padding: 4px;
+  color: black;
+}
+
+.custom-toggler{
+  border: none;
+  
+}
+
+.offcanvas{
+  border: none;
+  padding: 30px;
+  width: 300px;
+}

@@ -1,0 +1,83 @@
+.registro-mascota {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    box-sizing: border-box;
+  }
+  
+  .registro-mascota h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .registro-mascota form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registro-mascota input {
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .registro-mascota input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .registro-mascota button {
+    background: linear-gradient(140.14deg, #0e8cec 15.05%, #1fcdd6 114.99%) padding-box,
+      linear-gradient(142.51deg, #4a99d6 8.65%, #329bec 88.82%) border-box;
+    border-radius: 7px;
+    border: 2px solid transparent;
+    padding: 10px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+  }
+  
+  .registro-mascota button:disabled {
+    background-color: #b0d3ff;
+    cursor: not-allowed;
+  }
+  
+  .registro-mascota div {
+    text-align: center;
+    margin-top: 10px;
+    color: #ff0000;
+  }
+  
+  .registro-mascota select {
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .registro-mascota select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .registro-mascota .row {
+    margin-bottom: 15px;
+  }
+  
+  .registro-mascota .form-control {
+    margin-bottom: 10px;
+  }

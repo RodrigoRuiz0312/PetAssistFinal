@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+body{
+    background-image: url('/images/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* El fondo permanece fijo al hacer scroll */
+    background-position: center;
+    margin: 0; /* Asegúrate de eliminar márgenes del body */
+}
+
+.contenedor {
+    height: auto; /* Ajusta la altura al contenido */
+    width: 800px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el contenedor */
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(15px); /* Aplica desenfoque al fondo */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados para un mejor diseño */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+}
+
+.about {
+    text-align: justify;
+
+}
+
+.about p {
+    color: rgb(93, 88, 88);
+    font-family: "Oxanium", sans-serif;
+    margin-bottom: 15px; /* Espaciado entre párrafos */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+.about img {
+    display: block;
+    margin: 20px auto; /* Centra la imagen y añade margen superior */
+    width: 150px; /* Mantiene el tamaño de la imagen */
+    height: 150px;
+}

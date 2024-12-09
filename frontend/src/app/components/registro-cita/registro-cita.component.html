@@ -1,0 +1,79 @@
+<div class="cartilla-container">
+    <!-- Mostrar los datos generales de la mascota seleccionada -->
+    <div class="cartilla-section datos-generales">
+      <h2 *ngIf="nombreUsuario">Hola, {{nombreUsuario}}</h2>
+      <p><strong>Agendar cita para: </strong></p>
+  
+      <!-- Lista de mascotas -->
+      <div *ngIf="mascotas.length > 0">
+        <select (change)="seleccionarMascota($event)"
+          [ngModel]="selectedMascota?.id">
+          <option *ngFor="let mascota of mascotas"
+            [value]="mascota.id">{{mascota.nombre}}</option>
+        </select>
+      </div>
+  
+      <!-- Si no hay mascotas registradas -->
+      <div *ngIf="mascotas.length === 0">
+        <p>No tienes mascotas registradas.</p>
+      </div>
+  
+      <br>
+  
+      <!-- Datos de la mascota seleccionada -->
+      <div *ngIf="selectedMascota">
+        <p><strong>Nombre:</strong> {{selectedMascota.nombre}}</p>
+        <div class="row">
+          <div class="col"><p><strong>Especie:</strong>
+              {{selectedMascota.especie}}</p></div>
+          <div class="col"><p><strong>Raza:</strong>
+              {{selectedMascota.raza}}</p></div>
+        </div>
+        <div class="row">
+          <div class="col"><p><strong>Sexo:</strong>
+              {{selectedMascota.sexo}}</p></div>
+          <div class="col">
+            <p><strong>Edad:</strong> {{selectedMascota?.edad ?
+              selectedMascota.edad + ' años' : ''}}</p>
+          </div>
+        </div>
+        <img src="/images/perro_medico.png" width="200px" height="200px">
+      </div>
+    </div>
+  
+    <!-- Formulario para agendar cita -->
+    <div class="cartilla-section registrar-cita">
+      <h2>Rellena la siguiente información</h2>
+      <form (ngSubmit)="registrarCita()" *ngIf="selectedMascota && clienteId">
+        <div *ngIf="selectedVeterinario">
+          <p><strong>Veterinario seleccionado:</strong> {{
+            selectedVeterinario.nombre }} {{ selectedVeterinario.apellidos }}</p>
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" [(ngModel)]="cita.fecha" name="fecha"
+            required />
+        </div>
+        <div class="form-group">
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" [(ngModel)]="cita.hora" name="hora"
+            required />
+        </div>
+        <div class="form-group">
+          <label for="motivo">Motivo:</label>
+          <input type="text" id="motivo" [(ngModel)]="cita.motivo" name="motivo"
+            placeholder="Motivo de la cita" required />
+        </div>
+        <div class="form-group">
+          <label for="notas">Notas adicionales:</label>
+          <textarea id="notas" [(ngModel)]="cita.notas" name="notas"
+            placeholder="Notas adicionales"></textarea>
+        </div>
+        <!-- Botón para redirigir a la lista de veterinarios -->
+        
+        <button class="button_3" (click)="cartilla()">Revisar Cartilla</button>
+        <button class="button_2" (click)="cambiarVeterinario()">Cambiar Veterinario</button>
+        <button class="button">Agendar Cita</button>
+      </form>
+    </div>
+  </div>

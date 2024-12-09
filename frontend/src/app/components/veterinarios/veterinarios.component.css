@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/* Contenedor principal */
+.cartilla-container {
+  width: auto;
+  border-radius: 10px;
+  font-family: "Oxanium", sans-serif;
+}
+
+.listaVets{
+  position: relative;
+  top: 130px;
+  left: 50px;
+  max-width: 1200px;
+  color: #232323;
+}
+
+.listaVets table{
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Bordes de la tabla y las celdas */
+.listaVets table, .listaVets td {
+  border: 1px solid #ccc; /* Bordes de la tabla y celdas */
+}
+
+.listaVets td{
+  text-align: center;
+  font-weight: 500;
+}
+
+.listaVets th{
+  background-color: #28b5d8;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Secciones */
+.cartilla-noVets {
+  position: absolute;
+  width: 1250px;
+  height: 500px;
+  top: 105px;
+  left: 40px;
+  color: white;
+  background: linear-gradient(to right bottom, rgb(18, 157, 221), rgba(43, 152, 188, 0.62));
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: "Oxanium", sans-serif;
+  
+  /* Flexbox para centrar el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centrado vertical */
+  align-items: center;      /* Centrado horizontal */
+  text-align: center;       /* Asegurarse de que el texto esté centrado */
+}
+
+
+.button{
+  background: linear-gradient(140.14deg, #0e8cec 15.05%, #1fcdd6 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, #4a99d6 8.65%, #329bec 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  padding: 5px 20px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.button:hover {
+  box-shadow: none;
+  opacity: 80%;
+}

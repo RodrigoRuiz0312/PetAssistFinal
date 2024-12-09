@@ -1,0 +1,108 @@
+<div class="cartilla-container">
+    <!-- Mostrar la tabla de mascotas -->
+    <div class="listaMascotas" *ngIf="mascotas.length > 0; else noMascotas">
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Nombre</th>
+            <th>Especie</th>
+            <th>Raza</th>
+            <th>Sexo</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let mascota of mascotas">
+            <td>{{ mascota.nombre }}</td>
+            <td>{{ mascota.especie }}</td>
+            <td>{{ mascota.raza || 'N/A' }}</td>
+            <td>{{ mascota.sexo }}</td>
+            <td>
+              <button class="button" (click)="seleccionarMascota(mascota)">Ver Cartilla</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Mensaje si no hay mascotas -->
+    <ng-template #noMascotas>
+      <div class="cartilla-noMascotas">
+        <h2>No tienes mascotas registradas</h2>
+        <p>Para ver la cartilla médica, primero debes registrar una mascota.</p>
+        <img src="/gifs/perro_llorando.gif" width="200px" height="200px">
+      </div>
+    </ng-template>
+  
+    <!-- Mostrar los datos generales de la mascota seleccionada -->
+    <div *ngIf="selectedMascota" class="cartilla-section datos-generales">
+      <h2>Datos Generales</h2>
+      <p><strong>Nombre:</strong> {{ selectedMascota.nombre }}</p>
+      <div class="row">
+        <div class="col"><p><strong>Especie:</strong> {{ selectedMascota.especie }}</p></div>
+        <div class="col"><p><strong>Raza:</strong> {{ selectedMascota.raza || 'N/A' }}</p></div>
+      </div>
+      <div class="row">
+        <div class="col"><p><strong>Sexo:</strong> {{ selectedMascota.sexo }}</p></div>
+        <div class="col"><p><strong>Color:</strong> {{ selectedMascota.color || 'N/A' }}</p></div>
+      </div>
+      <p><strong>Edad:</strong> {{ selectedMascota.edad || 'N/A' }} años</p>
+      <p><strong>Señas particulares:</strong> {{ selectedMascota.senas || 'N/A' }}</p>
+    </div>
+  
+    <!-- Historial Médico -->
+  <div *ngIf="selectedMascota" class="cartilla-section historial-medico">
+    <h2>Historial Médico</h2>
+    <table class="cartilla-tabla">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Procedimiento</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let registro of historialMedico">
+          <td>{{ registro.fecha }}</td>
+          <td>{{ registro.procedimiento }}</td>
+          <td>{{ registro.notas }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+    <!-- Próximas Citas -->
+  <div *ngIf="selectedMascota" class="cartilla-section proximas-citas">
+    <h2>Próximas Citas</h2>
+    <div class="cartilla-tabla-container">
+      <table class="cartilla-tabla">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Motivo</th>
+            <th>Veterinario</th>
+            <th>Veterinaria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of citas">
+            <td>{{ cita.fecha }}</td>
+            <td>{{ cita.hora }}</td>
+            <td>{{ cita.motivo }}</td>
+            <td>{{ cita.veterinario }}</td>
+            <td>{{ cita.veterinaria }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Botón para cerrar la cartilla -->
+    <button class="button" (click)="cerrarCartilla()">Cerrar Cartilla</button>
+  </div>
+  
+  
+  
+  
+  
+  </div>

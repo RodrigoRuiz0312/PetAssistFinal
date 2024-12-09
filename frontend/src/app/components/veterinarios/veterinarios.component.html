@@ -1,0 +1,36 @@
+<div class="cartilla-container">
+    
+    <div class="listaVets" *ngIf="veterinarios.length > 0; else noVets">
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Veterinario</th>
+            <th>Especialidad</th>
+            <th>Horarios</th>
+            <th>Ubicación</th>
+            <th>Teléfono</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let vet of veterinarios">
+            <td>{{ vet.nombre }} {{ vet.apellidos }}</td>
+            <td>{{ vet.servicios }}</td>
+            <td>{{ vet.horarios }}</td>
+            <td>{{ vet.direccion }}</td>
+            <td>{{ vet.telefono }}</td>
+            <td><button class="button" (click)="seleccionarVeterinario(vet)">Agendar cita</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <ng-template #noVets>
+      <div class="cartilla-noVets">
+        <h2>Por el momento, no hay médicos veterinarios disponibles</h2>
+        <p>Regresa más tarde.</p>
+        <img src="/images/noVets.png" width="300px" height="300px">
+      </div>
+    </ng-template>
+    </div>
+  

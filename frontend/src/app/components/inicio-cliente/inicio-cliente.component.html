@@ -1,0 +1,33 @@
+<!-- Carrusel -->
+<section class="main-section">
+    <div class="carousel-container d-flex align-items-center justify-content-center">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/Ruleta1.jpg" class="d-block rounded carousel-image mx-auto" alt="Cinque Terre" (click)="redirigir('/registroCita')">
+          </div>
+          <div class="carousel-item">
+            <img src="images/Ruleta2.jpg" class="d-block rounded carousel-image mx-auto" alt="Veterinarias cercanas" (click)="redirigir('/listaVets')">
+          </div>
+          <div class="carousel-item">
+            <img src="images/Ruleta3.jpg" class="d-block rounded carousel-image mx-auto" alt="Agenda una cita médica" (click)="redirigir('/pagina3')">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Animación de carga -->
+  <div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Cargando...</p>
+  </div>

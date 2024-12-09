@@ -1,0 +1,46 @@
+<div class="registro-mascota">
+    <h2>Registrar Mascota</h2>
+    <form [formGroup]="mascotaForm" (ngSubmit)="onSubmit()">
+      
+      <div class="row">
+        <div class="col-md-4">
+          <input formControlName="nombre" placeholder="Nombre de la mascota" required class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input formControlName="especie" placeholder="Especie" required class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input formControlName="raza" placeholder="Raza" required class="form-control" />
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <select formControlName="sexo" required class="form-control">
+            <option value="" disabled selected>Selecciona el sexo</option>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <input formControlName="color" placeholder="Color" required class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input formControlName="edad" placeholder="Edad" required class="form-control" />
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <input formControlName="senas" placeholder="Señas particulares" required class="form-control" />
+        </div>
+      </div>
+  
+      <!-- Campo oculto para el id del cliente -->
+      <input type="hidden" formControlName="detalles_cliente_id" [value]="clienteId" />
+  
+      <button type="submit" [disabled]="mascotaForm.invalid" class="button">Registrar</button>
+    </form>
+  
+    <div *ngIf="message">{{ message }}</div>
+  </div>

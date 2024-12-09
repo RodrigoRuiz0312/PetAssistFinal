@@ -1,0 +1,42 @@
+/* estilos.css */
+.inicio{
+    position: absolute;
+    top: 85px;
+    width: 100%;
+  }
+  
+  /* Estilos para el carrusel */
+  .carousel-item img {
+      height: 580px;
+  }
+  
+  /* Estilos para los cuadros de texto */
+  .text-box {
+      padding: 20px;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+      text-align: justify;
+  }
+    
+  .btn-squar {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      overflow: hidden;
+      border: none; /* Opcional: remueve el borde del botón */
+  }
+    
+  .btn-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+    
+  .dropdown-menu dropdown-menu-end{
+    position: absolute; 
+    max-height: 200px; 
+    overflow-y: auto;
+  }

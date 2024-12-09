@@ -1,0 +1,50 @@
+<header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">
+          <img src="images/logo.png" alt="Logo" width="55" height="55"
+            class="d-inline-block align-text-middle rotacion">
+          PetAssist
+        </a>
+        <ul class="nav-links">
+          <li *ngIf="!isAuthenticated"><a routerLinkActive="active" routerLink="">Inicio</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLinkActive="active" routerLink="about">Nosotros</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLinkActive="active" routerLink="login">Iniciar sesión</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLinkActive="active" routerLink="registro">Registrarse</a></li>
+  
+          <!-- Si el usuario es cliente -->
+          <li *ngIf="isAuthenticated && userTipo === 'cliente'">
+            <a class="nav-link" routerLink="inicio-cliente">Inicio</a>
+          </li>
+          <li *ngIf="isAuthenticated && userTipo === 'cliente'">
+            <a class="nav-link" routerLink="listaVets">Veterinarios</a>
+          </li>
+          <li *ngIf="isAuthenticated && userTipo === 'cliente'">
+            <a class="nav-link" routerLink="registroMascota">Registrar Mascotas</a>
+          </li>
+          <li *ngIf="isAuthenticated && userTipo === 'cliente'">
+            <a class="nav-link" routerLink="registroCita">Agendar cita</a>
+          </li>
+          <li *ngIf="isAuthenticated && userTipo === 'cliente'">
+            <a class="nav-link" routerLink="cartilla">Cartillas</a>
+          </li>
+  
+          <!-- Si el usuario es veterinario -->
+          <li *ngIf="isAuthenticated && userTipo === 'veterinario'">
+            <a class="nav-link" routerLink="inicioVet">Inicio</a>
+          </li>
+          <li *ngIf="isAuthenticated && userTipo === 'veterinario'">
+            <a class="nav-link" routerLink="tablaVet">Citas</a>
+          </li>
+          <li *ngIf="isAuthenticated && userTipo === 'veterinario'">
+            <a class="nav-link" routerLink="perfilVet">Perfil</a>
+          </li>
+      
+          <!-- Si el usuario está autenticado (cerrar sesión) -->
+          <li *ngIf="isAuthenticated">
+            <button class="nav-link btn" (click)="logout()">Cerrar sesión</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>

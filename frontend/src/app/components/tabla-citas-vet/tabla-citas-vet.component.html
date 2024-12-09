@@ -1,0 +1,50 @@
+<div class="contenido">
+    <br>
+    <h1 class="Titulo">Citas Programadas</h1>
+    <br><br><br>
+  
+    <!-- Contenedor con scroll -->
+    <div class="tabla-contenedor">
+      <table class="Tabla">
+        <thead>
+          <tr>
+            <th scope="col">USUARIO/DUEÑO</th>
+            <th scope="col">MASCOTA</th>
+            <th scope="col">MOTIVO</th>
+            <th scope="col">FECHA</th>
+            <th scope="col">REAGENDAR</th> <!-- Columna para el botón de reagendar -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of citas">
+            <td>{{ cita.cliente.nombre }} {{ cita.cliente.apellidos }}</td>
+            <td>{{ cita.mascota.nombre }}</td>
+            <td>{{ cita.motivo }}</td>
+            <td>{{ cita.fecha | date: 'shortDate' }} {{ cita.hora | date: 'shortTime' }}</td>
+
+            <td>
+              <button class="btn-gradient2" (click)="abrirReagendarModal(cita)">REAGENDAR</button> <!-- Botón para abrir modal -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Modal para reagendar cita -->
+    <div *ngIf="isReagendarModalOpen" class="modal">
+      <div class="modal-content">
+        <h2>Reagendar cita de {{ selectedCita.cliente.nombre }} - {{ selectedCita.mascota.nombre }}</h2>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" [(ngModel)]="newFecha" />
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" [(ngModel)]="newHora" />
+        
+        <!-- Campo para motivo de la cita reagendada -->
+        <label for="motivo_reagendada">Motivo (opcional):</label>
+        <textarea id="motivo_reagendada" [(ngModel)]="newMotivoReagendada"></textarea>
+  
+        <button (click)="reagendarCita()">Reagendar</button>
+        <button (click)="cerrarReagendarModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>

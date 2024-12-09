@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+
+.container-form {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;    /* Centrar verticalmente */
+  height: 100vh;          /* Usar toda la altura de la ventana */
+  max-width: 100%;        /* Ajustar al ancho de la ventana */
+}
+
+.cflogin {
+  display: flex;
+  width: 800px;             /* Ancho relativo al contenedor padre */
+  max-width: 800px;       /* Límite máximo */
+  height: 450px;          /* Altura inicial */
+  max-height: 500px;      /* Límite máximo */
+  border-radius: 20px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.information {
+  flex: 1;                /* Ocupa un porcentaje igual dentro del contenedor */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to right bottom, rgb(18, 157, 221), rgba(43, 152, 188, 0.62));
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 30px;          /* Espaciado interno para mantener proporción */
+}
+
+.form-information {
+  flex: 1;                /* Ocupa el mismo espacio que .information */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #a5d1dd;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
+}
+
+.info-childs {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.info-childs img {
+  width: 100%;
+}
+
+.info-childs h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-family: "Oxanium", sans-serif;
+}
+
+.info-childs p {
+  margin: 15px 0;
+  color: #ffffff;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 600;
+}
+
+.info-childs input {
+  background-color: transparent;
+  outline: none;
+  border: solid 2px #9191bd;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #9191bd;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.info-childs input:hover {
+  background-color: #9191bd;
+  border: none;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.form-information-childs {
+  padding: 0 30px;
+}
+
+.form-information-childs h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Oxanium", sans-serif;
+}
+
+.form-information-childs p {
+  color: #555;
+}
+
+.icons {
+  margin: 15px 0;
+}
+
+.icons i {
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #9191bd;
+  border: solid thin #9191bd;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.icons i:hover {
+  background-color: #c7c7f3;
+  color: #fff;
+}
+
+.form {
+  margin: 30px 0 0 0;
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 0 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.form label input {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form label i {
+  color: #a7a7a7;
+}
+
+.form input[type="submit"] {
+  background-color: #1f8bd2;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  font-weight: 600;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #3f5677;
+}
+
+.hide {
+  position: absolute;
+  transform: translateY(-300%);
+}
+
+.tipo-usuario label {
+  display: inline-block;
+}
+
+.tipo-usuario input[type="checkbox"] {
+  display: none;
+
+}
+
+.tipo-usuario label {
+  display: inline-block;
+  padding: 5px 8px;
+  margin: 3px;
+  background-color: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tipo-usuario input[type="checkbox"]:checked+label {
+  background-color: #66BB6A;
+  color: #fff;
+}
+
+.usuario button:hover {
+  background-color: #7a7a9a;
+}
+
+#botonesLog {
+  display: inline-block;
+}
+
+/* ALERTAS */
+/* Estilos para las alertas*/
+.alert {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.error {
+  background-color: #F66060;
+}
+
+.success {
+  background-color: #0ca828;
+}
+
+
+@media screen and (max-width:750px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:580px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container-form {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .information {
+    width: 100%;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0;
+  }
+
+  .form-information {
+    width: 100%;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+  }
+}
+
+.input-icon {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Página completa: Aplica blur a toda la página */
+.page-container.blur {
+  filter: blur(4px);
+  pointer-events: none; /* Desactiva interacciones mientras carga */
+  user-select: none;
+}
+
+/* Animación de carga */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alertas */
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.alert-box {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.alert-box p {
+  margin: 0 0 10px;
+}
+
+.alert-box button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.alert-box button:hover {
+  background: #0056b3;
+}
